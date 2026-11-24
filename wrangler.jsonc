@@ -1,11 +1,21 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "steam-mcp",
-  "main": "src/index.ts",
+  "main": "src/worker.ts",
   "compatibility_date": "2026-11-24",
   "compatibility_flags": [
-    "nodejs_compat"
+    "nodejs_compat",
+    "global_fetch_strictly_public"
   ],
   "workers_dev": true,
-  "preview_urls": false
+  "preview_urls": false,
+  "kv_namespaces": [
+    {
+      "binding": "OAUTH_KV",
+      "id": "fc131c73c3094ee8b13e29859497ad17"
+    }
+  ],
+  "vars": {
+    "PUBLIC_ORIGIN": "https://steam-mcp.oratisoratisoratisoratis.workers.dev"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@oratis/steam-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -16,12 +16,15 @@
     "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
+    "@cloudflare/workers-oauth-provider": "^1.3.0",
     "@modelcontextprotocol/sdk": "1.32.2",
     "htmlparser2": "^10.1.0",
     "zod": "^4.6.7"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261124.1",
+    "esbuild": "^0.28.2",
+    "miniflare": "^5.20261123.0-beta",
     "typescript": "^6.0.0",
     "wrangler": "4.167.0"
   }
