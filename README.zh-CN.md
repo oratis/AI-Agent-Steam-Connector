@@ -1,4 +1,4 @@
-# Steam MCP
+# AI Agent Steam Connector
 
 [English](README.md) · [MIT 许可证](LICENSE)
 
@@ -87,8 +87,8 @@ claude mcp add --transport http --scope user steam https://steam-mcp.oratisorati
 需要 Node.js 24 或以上版本。
 
 ```sh
-git clone https://github.com/oratis/steam-mcp.git
-cd steam-mcp
+git clone https://github.com/oratis/AI-Agent-Steam-Connector.git
+cd AI-Agent-Steam-Connector
 npm ci
 npm run check
 npm test
@@ -108,4 +108,4 @@ npm run smoke -- http://localhost:8787/mcp
 - 浏览器直接打开 `/mcp` 会收到 HTTP 405。查看[服务信息](https://steam-mcp.oratisoratisoratisoratis.workers.dev/)可确认地址，完整验证请用上面的 smoke 命令。
 - 如果可以列出工具，但查询返回上游错误，请核对地区和标识符后重试。
 
-由 [oratis](https://github.com/oratis) 独立维护。同系列连接器 · [PlayStation MCP](https://github.com/oratis/playstation-mcp) · [Nintendo MCP](https://github.com/oratis/nintendo-mcp)。
+由 [oratis](https://github.com/oratis) 独立维护。同系列连接器 · [AI Agent PlayStation Connector](https://github.com/oratis/AI-Agent-PlayStation-Connector) · [AI Agent Nintendo Connector](https://github.com/oratis/AI-Agent-Nintendo-Connector)。

@@ -17,7 +17,8 @@ async function call(name, args) {
 
 try {
   await client.connect(new StreamableHTTPClientTransport(endpoint));
-  assert.equal(client.getServerVersion()?.name, "steam-mcp");
+  assert.equal(client.getServerVersion()?.name, "ai-agent-steam-connector");
+  assert.equal(client.getServerVersion()?.title, "AI Agent Steam Connector");
   const { tools } = await client.listTools();
   console.log(endpoint.href, tools.map((t) => t.name).join(", "));
   const list = await call("search_store", { query: "Portal 2" });

@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
-import { install, name, instructions } from "./platform.ts";
+import { install, name, title, instructions } from "./platform.ts";
 import { PublicSource } from "./source.ts";
 
 export function handler(upstream: typeof fetch, personal?: (server: McpServer) => void) {
@@ -9,11 +9,12 @@ export function handler(upstream: typeof fetch, personal?: (server: McpServer) =
     if (url.pathname === "/" && request.method === "GET") {
       return Response.json({
         name,
+        title,
         instructions,
         transport: "streamable-http",
         endpoint: new URL("/mcp", url).href,
         account_endpoint: new URL("/account/mcp", url).href,
-        repository: "https://github.com/oratis/" + name,
+        repository: "https://github.com/oratis/AI-Agent-Steam-Connector",
       });
     }
     if (url.pathname !== (personal ? "/account/mcp" : "/mcp"))
@@ -28,7 +29,7 @@ export function handler(upstream: typeof fetch, personal?: (server: McpServer) =
       });
     }
 
-    const server = new McpServer({ name, version: "0.2.0" }, { instructions });
+    const server = new McpServer({ name, title, version: "0.2.1" }, { instructions });
     install(server, new PublicSource(upstream));
     personal?.(server);
     const transport = new WebStandardStreamableHTTPServerTransport({

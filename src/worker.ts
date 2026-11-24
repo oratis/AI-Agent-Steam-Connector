@@ -9,6 +9,7 @@ import {
   type ConsentDescription,
 } from "@cloudflare/workers-oauth-provider";
 import { handler } from "./index.ts";
+import { title } from "./platform.ts";
 import { installAccount } from "./account.ts";
 import { InvalidAssertion, steamLogin, verifySteam } from "./openid.ts";
 
@@ -19,7 +20,7 @@ const escape = (value: string) => value.replace(/[&<>"']/g, (c) => "&#" + c.char
 function page(d: ConsentDescription, handle: string, libraryEnabled: boolean) {
   const client = escape(d.clientName);
   return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Connect Steam to ${client}</title><main><h1>Connect Steam to ${client}</h1>
+<title>${title} · Connect to ${client}</title><main><h1>Connect Steam to ${client}</h1>
 <p>${d.clientDomain ? "Client domain: " + escape(d.clientDomain) : "This client supplied its own display name."}
 Access returns to <strong>${escape(d.redirectHost)}</strong>.</p>
 ${d.redirectIsLoopback ? "<p>Continue only if you started this connection in an app on this computer.</p>" : ""}

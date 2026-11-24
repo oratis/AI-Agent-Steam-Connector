@@ -1,6 +1,6 @@
 {
-  "name": "@oratis/steam-mcp",
-  "version": "0.2.0",
+  "name": "@oratis/ai-agent-steam-connector",
+  "version": "0.2.1",
   "private": true,
   "license": "MIT",
   "type": "module",

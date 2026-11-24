@@ -47,7 +47,7 @@ localOrigin = "http://127.0.0.1:" + listener.address().port;
 const provider = {
   redirectUrl: localOrigin + "/callback",
   clientMetadata: {
-    client_name: "Local Steam MCP verification",
+    client_name: "AI Agent Steam Connector local verification",
     redirect_uris: [localOrigin + "/callback"],
     grant_types: ["authorization_code", "refresh_token"],
     response_types: ["code"],
