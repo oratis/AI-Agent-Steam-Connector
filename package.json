@@ -1,0 +1,28 @@
+{
+  "name": "@oratis/steam-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "check": "tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "build": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "htmlparser2": "^10.1.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261124.1",
+    "typescript": "^6.0.0",
+    "wrangler": "4.167.0"
+  }
+}
